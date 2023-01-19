@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 @WebAdapter
 @RestController
 class ShortURLController(
-  val shortURLUseCase: ShortURLUseCase
+  private val shortURLUseCase: ShortURLUseCase
 ) {
 
   @PostMapping("api/v1/shortURL")

@@ -8,7 +8,7 @@ import com.waterfogsw.shorturl.url.domain.ShortenURL
 
 @UseCase
 class ShortURLService(
-  val appProperties: AppProperties
+  private val appProperties: AppProperties
 ) : ShortURLUseCase {
 
   override fun shortURL(command: ShortURLCommand): String {
