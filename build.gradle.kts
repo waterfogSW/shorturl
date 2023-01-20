@@ -21,7 +21,7 @@ val snippetsDir by extra { file("build/generated-snippets") }
 dependencies {
   implementation("org.springframework.boot:spring-boot-starter-web")
   implementation("org.springframework.boot:spring-boot-starter-validation")
-  implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
+  implementation("org.springframework.boot:spring-boot-starter-data-jpa")
   implementation("org.springframework.boot:spring-boot-starter-data-redis")
   implementation("org.jetbrains.kotlin:kotlin-reflect")
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -32,6 +32,10 @@ dependencies {
   testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")
   testImplementation("io.kotest:kotest-runner-junit5:5.5.4")
   testImplementation("io.kotest:kotest-assertions-core:5.5.4")
+}
+
+tasks.jar {
+  enabled = false
 }
 
 tasks.withType<KotlinCompile> {
