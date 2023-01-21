@@ -4,8 +4,9 @@ plugins {
   id("org.springframework.boot") version "3.0.1"
   id("io.spring.dependency-management") version "1.1.0"
   id("org.asciidoctor.jvm.convert") version "3.3.2"
-  kotlin("jvm") version "1.7.22"
-  kotlin("plugin.spring") version "1.7.22"
+  kotlin("jvm") version "1.8.0"
+  kotlin("plugin.spring") version "1.8.0"
+  kotlin("plugin.jpa") version "1.8.0"
 }
 
 group = "com.waterfogsw"
@@ -17,6 +18,12 @@ repositories {
 }
 
 val snippetsDir by extra { file("build/generated-snippets") }
+
+allOpen {
+  annotation("javax.persistence.Entity")
+  annotation("javax.persistence.MappedSuperclass")
+  annotation("javax.persistence.Embeddable")
+}
 
 dependencies {
   implementation("org.springframework.boot:spring-boot-starter-web")
