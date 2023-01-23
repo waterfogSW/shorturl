@@ -16,7 +16,7 @@ class ShortenURLService(
   override fun shortURL(command: ShortURLCommand): String {
     val host = appProperties.url
     val shortenURL = ShortenURL.shortURL(host, command.targetURL)
-
-    return shortenURL.shortURL
+    val savedShortURL = saveShortenURLPort.save(shortenURL)
+    return savedShortURL.shortURL
   }
 }
